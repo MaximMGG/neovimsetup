@@ -1,8 +1,25 @@
 local lspconfig = require("lspconfig")
-lspconfig["zls"].setup({})
+lspconfig["zls"].setup({
+    on_attach = function(client, buf)
+        vim.api.nvim_create_autocmd("CursorHoldI", {
+            buffer = buf,
+            callback = function()
+                vim.lsp.buf.signature_help()
+            end,
+        })
+        -- vim.api.nvim_create_autocmd("CursorHold", {
+        --     buffer = buf,
+        --     callback = function()
+        --         vim.lsp.buf.hover()
+        --     end
+        -- })
+        -- this is uncomment if need show hover on cursor
+    end
+})
 lspconfig["clangd"].setup({})
 lspconfig["lua_ls"].setup({})
 
+vim.o.updatetime = 300
 
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
