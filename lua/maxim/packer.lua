@@ -41,4 +41,15 @@ return require('packer').startup(function(use)
     }
     use 'romgrk/barbar.nvim'
     use "RRethy/base16-nvim"
+    -- use ({
+    --     'nvimdev/lspsaga.nvim',
+    --     after = 'nvim-lspconfig',
+    --     config = function()
+    --         require('lspsaga').setup({})
+    --     end,
+    -- })
+
+    --use "folke/noice.nvim",
+
+    --use 'MunifTanjim/nui.nvim'
 end)
