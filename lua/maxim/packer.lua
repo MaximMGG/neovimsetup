@@ -45,5 +45,6 @@ return require('packer').startup(function(use)
         'nvimdev/lspsaga.nvim',
         after = 'nvim-lspconfig',
     })
+    use "folke/flash.nvim"
 
 end)
