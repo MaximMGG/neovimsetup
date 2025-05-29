@@ -116,11 +116,6 @@ _G.packer_plugins = {
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["flash.nvim"] = {
-    loaded = true,
-    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/flash.nvim",
-    url = "https://github.com/folke/flash.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

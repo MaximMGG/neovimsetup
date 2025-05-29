@@ -14,6 +14,7 @@ set.mouse = a
 set.hlsearch = false
 set.incsearch = true
 
+set.guicursor = ""
 set.termguicolors = true
 
 set.scrolloff = 8
