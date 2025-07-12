@@ -4,6 +4,10 @@ require("maxim.remap")
 
 vim.cmd.colorscheme("base16-atelier-savanna")
 
+-- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+-- vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
+-- vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "none"})
+
 
 -- base16-3024
 -- base16-apathy
