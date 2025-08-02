@@ -43,5 +43,6 @@ return require('packer').startup(function(use)
         after = 'nvim-lspconfig',
     })
     use "folke/flash.nvim"
+    use "nvim-treesitter/nvim-treesitter"
 
 end)

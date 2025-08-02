@@ -1,4 +1,42 @@
 local lspconfig = require("lspconfig")
+
+
+local function ensure_ols_config()
+    local config_path = vim.fn.getcwd() .. "/ols.json"
+    if vim.fn.filereadable(config_path) == 0 then
+        local config = {
+            diagnostics = true,
+            completion = true,
+            highlighting = true,
+            inlayHints = true,
+            autoImport = true,
+            imports = true,
+            suggestSnippets = false
+        }
+        local file = io.open(config_path, "w")
+        file:write(vim.fn.json_encode(config))
+        file:close()
+     end
+end
+
+lspconfig["ols"].setup({
+    on_attach = function()
+        ensure_ols_config()
+        -- vim.api.nvim_create_autocmd("CursorHoldI", {
+        --     buffer = buf,
+        --     callback = function()
+        --         vim.lsp.buf.signature_help()
+        --     end,
+        -- })
+    end,
+    init_options = {
+        collections = {
+            {name = "shared", path = vim.fn.expand('/home/maxim/prog/Odin')}
+        }
+    }
+})
+
+
 lspconfig["zls"].setup({
     on_attach = function(client, buf)
         vim.api.nvim_create_autocmd("CursorHoldI", {
@@ -16,7 +54,15 @@ lspconfig["zls"].setup({
         -- this is uncomment if need show hover on cursor
     end
 })
-lspconfig["clangd"].setup({})
+lspconfig["clangd"].setup({
+    cmd = {"clangd"},
+    init_options = {
+        fallbackFlags = {"-std=c23"},
+    },
+    root_markers = {".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git"},
+
+})
+
 lspconfig["lua_ls"].setup({})
 
 vim.o.updatetime = 300
