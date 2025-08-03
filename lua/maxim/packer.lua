@@ -44,5 +44,17 @@ return require('packer').startup(function(use)
     })
     use "folke/flash.nvim"
     use "nvim-treesitter/nvim-treesitter"
+    use {"mfussenegger/nvim-dap",
+        requires = {"rcarriga/nvim-dap-ui",
+                    "theHamsta/nvim-dap-virtual-text",
+                    "nvim-neotest/nvim-nio",
+                    "jay-babu/mason-nvim-dap.nvim",
+                    "liaozixin/nvim-cpptools"},
+        config = function()
 
+            require("dapui").setup()
+            require("nvim-dap-virtual-text").setup()
+
+        end
+    }
 end)
