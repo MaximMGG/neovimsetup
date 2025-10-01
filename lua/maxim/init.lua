@@ -1,10 +1,7 @@
 require("maxim.config")
 require("maxim.remap")
 
-
-vim.cmd.colorscheme("base16-espresso")
-
-
+vim.cmd.colorscheme("base16-classic-dark")
 
 -- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
 -- vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
@@ -12,7 +9,6 @@ vim.cmd.colorscheme("base16-espresso")
 -- vim.api.nvim_set_hl(0, "SignColumn", {bg = "none"})
 -- vim.api.nvim_set_hl(0, "LineNr", {bg = "none"})
 -- vim.api.nvim_set_hl(0, "CursoreLineNr", {bg = "none"})
-
 
 -- base16-3024
 -- base16-apathy
@@ -42,8 +38,7 @@ vim.cmd.colorscheme("base16-espresso")
 -- base16-ayu-dark
 -- base16-ayu-light
 -- base16-ayu-mirage
--- base16-aztec
--- base16-bespin
+-- base16-aztec base16-bespin
 -- base16-black-metal
 -- base16-black-metal-bathory
 -- base16-black-metal-burzum

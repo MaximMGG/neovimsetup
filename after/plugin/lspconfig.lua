@@ -1,6 +1,8 @@
 local lspconfig = require("lspconfig")
 
 
+lspconfig["zls"].setup({})
+
 local function ensure_ols_config()
     local config_path = vim.fn.getcwd() .. "/ols.json"
     if vim.fn.filereadable(config_path) == 0 then
@@ -36,28 +38,11 @@ lspconfig["ols"].setup({
     }
 })
 
-
-lspconfig["zls"].setup({
-    on_attach = function(client, buf)
-        vim.api.nvim_create_autocmd("CursorHoldI", {
-            buffer = buf,
-            callback = function()
-                vim.lsp.buf.signature_help()
-            end,
-        })
-        -- vim.api.nvim_create_autocmd("CursorHold", {
-        --     buffer = buf,
-        --     callback = function()
-        --         vim.lsp.buf.hover()
-        --     end
-        -- })
-        -- this is uncomment if need show hover on cursor
-    end
-})
 lspconfig["clangd"].setup({
     cmd = {"clangd"},
+    filetypes = {"c", "h"},
     init_options = {
-        fallbackFlags = {"-std=c23"},
+        -- fallbackFlags = {"-std=c23"},
     },
     root_markers = {".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git"},
 

@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
         after = 'nvim-lspconfig',
     })
     use "folke/flash.nvim"
-    use "nvim-treesitter/nvim-treesitter"
+    -- use "nvim-treesitter/nvim-treesitter"
     use {"mfussenegger/nvim-dap",
         requires = {"rcarriga/nvim-dap-ui",
                     "theHamsta/nvim-dap-virtual-text",
@@ -57,4 +57,6 @@ return require('packer').startup(function(use)
 
         end
     }
+
+    use "ray-x/lsp_signature.nvim"
 end)
