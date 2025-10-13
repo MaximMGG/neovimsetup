@@ -59,4 +59,5 @@ return require('packer').startup(function(use)
     }
 
     use "ray-x/lsp_signature.nvim"
+    use "thesimonho/kanagawa-paper.nvim"
 end)
