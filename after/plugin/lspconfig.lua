@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 
+lspconfig["nimls"].setup({})
 
 lspconfig["zls"].setup({})
 
