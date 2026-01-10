@@ -1,8 +1,8 @@
 require("maxim.config")
 require("maxim.remap")
 
--- vim.cmd.colorscheme("base16-darcula")
-vim.cmd.colorscheme("kanagawa-paper")
+vim.cmd.colorscheme("base16-gruvbox-light-soft")
+-- vim.cmd.colorscheme("kanagawa-paper")
 
 -- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
 -- vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})

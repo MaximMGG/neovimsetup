@@ -82,3 +82,12 @@
   require('lspconfig')['lua_ls'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['ols'].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')['c3_lsp'].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')['v_analyzer'].setup {
+    capabilities = capabilities
+  }

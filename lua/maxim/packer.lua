@@ -61,4 +61,6 @@ return require('packer').startup(function(use)
     use "ray-x/lsp_signature.nvim"
     use "thesimonho/kanagawa-paper.nvim"
     use "nvim-treesitter/nvim-treesitter"
+    use {'timtro/glslView-nvim', ft = 'glsl'}
+    use "jake-stewart/multicursor.nvim"
 end)

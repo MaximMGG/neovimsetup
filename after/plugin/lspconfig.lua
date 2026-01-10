@@ -1,8 +1,19 @@
 local lspconfig = require("lspconfig")
 
-lspconfig["nimls"].setup({})
-
 lspconfig["zls"].setup({})
+lspconfig["v_analyzer"].setup({
+  cmd = {"/home/maxim/.config/v-analyzer/bin/v-analyzer", "--stdio"}
+})
+lspconfig["c3_lsp"].setup({
+  cmd = {
+    "c3lsp",
+    "--stdlib-path", "/home/maxim/progs/c3/lib/std",  -- adjust this
+  },
+  env = {
+    C3_STDLIB = "/home/maxim/progs/c3/lib/std"
+  },
+  root_dir = require('lspconfig.util').root_pattern("c3.toml", ".git"),
+})
 
 local function ensure_ols_config()
     local config_path = vim.fn.getcwd() .. "/ols.json"
@@ -23,6 +34,7 @@ local function ensure_ols_config()
 end
 
 lspconfig["ols"].setup({
+    cmd = {"/home/maxim/progs/ols/ols"},
     on_attach = function()
         ensure_ols_config()
         -- vim.api.nvim_create_autocmd("CursorHoldI", {
@@ -34,7 +46,10 @@ lspconfig["ols"].setup({
     end,
     init_options = {
         collections = {
-            {name = "shared", path = vim.fn.expand('/home/maxim/prog/Odin')}
+            {name = "shared", path = vim.fn.expand('/home/maxim/progs/Odin/shared')},
+            {name = "core", path = vim.fn.expand('/home/maxim/progs/Odin/core')},
+            {name = "vendor", path = vim.fn.expand('/home/maxim/progs/Odin/vendor')},
+            {name = "base", path = vim.fn.expand('/home/maxim/progs/Odin/base')},
         }
     }
 })
