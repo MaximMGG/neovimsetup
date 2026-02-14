@@ -1,15 +1,15 @@
 require("maxim.config")
 require("maxim.remap")
 
-vim.cmd.colorscheme("base16-gruvbox-light-soft")
--- vim.cmd.colorscheme("kanagawa-paper")
+require("tinted-nvim").setup({
+  default_scheme = "base16-black-metal-mayhem",
+})
 
--- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
--- vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
--- vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "none"})
--- vim.api.nvim_set_hl(0, "SignColumn", {bg = "none"})
--- vim.api.nvim_set_hl(0, "LineNr", {bg = "none"})
--- vim.api.nvim_set_hl(0, "CursoreLineNr", {bg = "none"})
+-- vim.cmd.colorscheme("base16-gruvbox-light-soft")
+-- vim.cmd.colorscheme("base16-black-metal-mayhem")
+vim.cmd.colorscheme("base24-ayu-dark")
+
+
 
 -- base16-0x96f
 -- base16-3024

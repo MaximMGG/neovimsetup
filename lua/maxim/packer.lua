@@ -36,8 +36,9 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use 'romgrk/barbar.nvim'
-    use "RRethy/base16-nvim"
+    -- use 'romgrk/barbar.nvim'
+    -- use "RRethy/base16-nvim"
+    use "tinted-theming/tinted-nvim"
     use ({
         'nvimdev/lspsaga.nvim',
         after = 'nvim-lspconfig',

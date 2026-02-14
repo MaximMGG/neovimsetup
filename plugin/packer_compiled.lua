@@ -86,16 +86,6 @@ _G.packer_plugins = {
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
   },
-  ["barbar.nvim"] = {
-    loaded = true,
-    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/barbar.nvim",
-    url = "https://github.com/romgrk/barbar.nvim"
-  },
-  ["base16-nvim"] = {
-    loaded = true,
-    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/base16-nvim",
-    url = "https://github.com/RRethy/base16-nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -240,10 +230,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tinted-nvim"] = {
+    loaded = true,
+    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/tinted-nvim",
+    url = "https://github.com/tinted-theming/tinted-nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: autoclose.nvim
+time([[Config for autoclose.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
+time([[Config for autoclose.nvim]], false)
 -- Config for: nvim-dap
 time([[Config for nvim-dap]], true)
 try_loadstring("\27LJ\2\n]\0\0\3\0\4\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\26nvim-dap-virtual-text\nsetup\ndapui\frequire\0", "config", "nvim-dap")
@@ -252,10 +251,6 @@ time([[Config for nvim-dap]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: autoclose.nvim
-time([[Config for autoclose.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
-time([[Config for autoclose.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-lspconfig ]]
