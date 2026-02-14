@@ -1,13 +1,13 @@
 require("maxim.config")
 require("maxim.remap")
 
-require("tinted-nvim").setup({
-  default_scheme = "base16-black-metal-mayhem",
-})
+-- require("tinted-nvim").setup({
+--   default_scheme = "base16-black-metal-mayhem",
+-- })
 
 -- vim.cmd.colorscheme("base16-gruvbox-light-soft")
--- vim.cmd.colorscheme("base16-black-metal-mayhem")
-vim.cmd.colorscheme("base24-ayu-dark")
+vim.cmd.colorscheme("base16-black-metal-mayhem")
+-- vim.cmd.colorscheme("base24-ayu-dark")
 
 
 

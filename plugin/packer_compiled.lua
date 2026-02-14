@@ -86,6 +86,11 @@ _G.packer_plugins = {
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
   },
+  ["base16-nvim"] = {
+    loaded = true,
+    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/base16-nvim",
+    url = "https://github.com/RRethy/base16-nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -160,11 +165,6 @@ _G.packer_plugins = {
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["multicursor.nvim"] = {
-    loaded = true,
-    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/multicursor.nvim",
-    url = "https://github.com/jake-stewart/multicursor.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -231,10 +231,10 @@ _G.packer_plugins = {
     path = "/home/maxim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tinted-nvim"] = {
+  ["vim-visual-multi"] = {
     loaded = true,
-    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/tinted-nvim",
-    url = "https://github.com/tinted-theming/tinted-nvim"
+    path = "/home/maxim/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   }
 }
 

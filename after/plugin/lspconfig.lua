@@ -34,7 +34,7 @@ local function ensure_ols_config()
 end
 
 lspconfig["ols"].setup({
-    cmd = {"/home/maxim/progs/ols/ols"},
+    cmd = {"/home/maxim/progs/odin/ols"},
     on_attach = function()
         ensure_ols_config()
         -- vim.api.nvim_create_autocmd("CursorHoldI", {
@@ -46,10 +46,10 @@ lspconfig["ols"].setup({
     end,
     init_options = {
         collections = {
-            {name = "shared", path = vim.fn.expand('/home/maxim/progs/Odin/shared')},
-            {name = "core", path = vim.fn.expand('/home/maxim/progs/Odin/core')},
-            {name = "vendor", path = vim.fn.expand('/home/maxim/progs/Odin/vendor')},
-            {name = "base", path = vim.fn.expand('/home/maxim/progs/Odin/base')},
+            {name = "shared", path = vim.fn.expand('/home/maxim/progs/odin/shared')},
+            {name = "core", path = vim.fn.expand('/home/maxim/progs/odin/core')},
+            {name = "vendor", path = vim.fn.expand('/home/maxim/progs/odin/vendor')},
+            {name = "base", path = vim.fn.expand('/home/maxim/progs/odin/base')},
         }
     }
 })

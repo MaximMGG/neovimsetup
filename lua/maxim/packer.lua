@@ -37,8 +37,8 @@ return require('packer').startup(function(use)
         end
     }
     -- use 'romgrk/barbar.nvim'
-    -- use "RRethy/base16-nvim"
-    use "tinted-theming/tinted-nvim"
+    use "RRethy/base16-nvim"
+    -- use "tinted-theming/tinted-nvim"
     use ({
         'nvimdev/lspsaga.nvim',
         after = 'nvim-lspconfig',
@@ -63,5 +63,5 @@ return require('packer').startup(function(use)
     use "thesimonho/kanagawa-paper.nvim"
     use "nvim-treesitter/nvim-treesitter"
     use {'timtro/glslView-nvim', ft = 'glsl'}
-    use "jake-stewart/multicursor.nvim"
+    use "mg979/vim-visual-multi"
 end)

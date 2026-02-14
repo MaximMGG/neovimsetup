@@ -18,10 +18,9 @@ map("n", "<leader>sh", ":split<CR>")
 
 map("n", "<A-k>", ":m -2<CR>")
 map("n", "<A-j>", ":m +1<CR>")
+map("v", "<leader>cy", "\"+yy")
 
 -- map("n", "<leader>oc", vim.cmd.find("/home/maxim/.config/nvim/lua/maxim/init.lua"))
---
-
 
 local open_config = function()
   vim.cmd.find("/home/maxim/.config/nvim/lua/maxim/init.lua")
@@ -29,14 +28,10 @@ end
 
 map("n", "<leader>oc", open_config)
 
-
 local open_terminal = function()
   vim.cmd.vsplit()
   vim.cmd.terminal()
-
 end
-
-
 
 map("n", "<leader>ot", open_terminal)
 
