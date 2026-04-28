@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 
+lspconfig["rust_analyzer"].setup({})
 lspconfig["zls"].setup({})
 lspconfig["v_analyzer"].setup({
   cmd = {"/home/maxim/.config/v-analyzer/bin/v-analyzer", "--stdio"}

@@ -20,6 +20,9 @@ map("n", "<A-k>", ":m -2<CR>")
 map("n", "<A-j>", ":m +1<CR>")
 map("v", "<leader>cy", "\"+yy")
 
+map("n", "<leader>rr", "<cmd>RustRun<CR>")
+map("n", "<leader>rt", "<cmd>RustTest<CR>")
+
 -- map("n", "<leader>oc", vim.cmd.find("/home/maxim/.config/nvim/lua/maxim/init.lua"))
 
 local open_config = function()

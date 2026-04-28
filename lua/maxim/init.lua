@@ -6,8 +6,9 @@ require("maxim.remap")
 -- })
 
 -- vim.cmd.colorscheme("base16-gruvbox-light-soft")
-vim.cmd.colorscheme("base16-black-metal-mayhem")
--- vim.cmd.colorscheme("base24-ayu-dark")
+-- vim.cmd.colorscheme("base16-black-metal-mayhem")
+vim.cmd.colorscheme("base16-valua")
+
 
 
 
