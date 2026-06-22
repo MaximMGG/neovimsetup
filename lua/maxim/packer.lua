@@ -45,23 +45,31 @@ return require('packer').startup(function(use)
     })
     use "folke/flash.nvim"
     -- use "nvim-treesitter/nvim-treesitter"
-    use {"mfussenegger/nvim-dap",
-        requires = {"rcarriga/nvim-dap-ui",
-                    "theHamsta/nvim-dap-virtual-text",
-                    "nvim-neotest/nvim-nio",
-                    "jay-babu/mason-nvim-dap.nvim",
-                    "liaozixin/nvim-cpptools"},
-        config = function()
-
-            require("dapui").setup()
-            require("nvim-dap-virtual-text").setup()
-
-        end
-    }
+    -- use {"mfussenegger/nvim-dap",
+    --     requires = {"rcarriga/nvim-dap-ui",
+    --                 "theHamsta/nvim-dap-virtual-text",
+    --                 "nvim-neotest/nvim-nio",
+    --                 "jay-babu/mason-nvim-dap.nvim",
+    --                 "liaozixin/nvim-cpptools"},
+    --     config = function()
+    --
+    --         require("dapui").setup()
+    --         require("nvim-dap-virtual-text").setup()
+    --
+    --     end
+    -- }
 
     use "ray-x/lsp_signature.nvim"
     use "thesimonho/kanagawa-paper.nvim"
-    use "nvim-treesitter/nvim-treesitter"
+    -- use "nvim-treesitter/nvim-treesitter"
     use {'timtro/glslView-nvim', ft = 'glsl'}
     use "mg979/vim-visual-multi"
+    use({
+      "L3MON4D3/LuaSnip",
+      -- follow latest release.
+      tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+      -- install jsregexp (optional!:).
+      run = "make install_jsregexp"
+    })
+
 end)

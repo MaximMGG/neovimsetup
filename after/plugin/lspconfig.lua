@@ -2,58 +2,55 @@ local lspconfig = require("lspconfig")
 
 lspconfig["rust_analyzer"].setup({})
 lspconfig["zls"].setup({})
-lspconfig["v_analyzer"].setup({
-  cmd = {"/home/maxim/.config/v-analyzer/bin/v-analyzer", "--stdio"}
-})
-lspconfig["c3_lsp"].setup({
-  cmd = {
-    "c3lsp",
-    "--stdlib-path", "/home/maxim/progs/c3/lib/std",  -- adjust this
-  },
-  env = {
-    C3_STDLIB = "/home/maxim/progs/c3/lib/std"
-  },
-  root_dir = require('lspconfig.util').root_pattern("c3.toml", ".git"),
-})
+ -- lspconfig["c3_lsp"].setup({
+ --   cmd = {
+ --     "c3lsp",
+ --     "--stdlib-path", "/home/maxim/progs/c3/lib/std",  -- adjust this
+ --   },
+ --   env = {
+ --     C3_STDLIB = "/home/maxim/progs/c3/lib/std"
+ --   },
+ --   root_dir = require('lspconfig.util').root_pattern("c3.toml", ".git"),
+ -- })
+ --
+ local function ensure_ols_config()
+     local config_path = vim.fn.getcwd() .. "/ols.json"
+     if vim.fn.filereadable(config_path) == 0 then
+         local config = {
+             diagnostics = true,
+             completion = true,
+             highlighting = true,
+             inlayHints = true,
+             autoImport = true,
+             imports = true,
+             suggestSnippets = false
+         }
+         local file = io.open(config_path, "w")
+         file:write(vim.fn.json_encode(config))
+         file:close()
+      end
+ end
 
-local function ensure_ols_config()
-    local config_path = vim.fn.getcwd() .. "/ols.json"
-    if vim.fn.filereadable(config_path) == 0 then
-        local config = {
-            diagnostics = true,
-            completion = true,
-            highlighting = true,
-            inlayHints = true,
-            autoImport = true,
-            imports = true,
-            suggestSnippets = false
-        }
-        local file = io.open(config_path, "w")
-        file:write(vim.fn.json_encode(config))
-        file:close()
-     end
-end
-
-lspconfig["ols"].setup({
-    cmd = {"/home/maxim/progs/odin/ols"},
-    on_attach = function()
-        ensure_ols_config()
-        -- vim.api.nvim_create_autocmd("CursorHoldI", {
-        --     buffer = buf,
-        --     callback = function()
-        --         vim.lsp.buf.signature_help()
-        --     end,
-        -- })
-    end,
-    init_options = {
-        collections = {
-            {name = "shared", path = vim.fn.expand('/home/maxim/progs/odin/shared')},
-            {name = "core", path = vim.fn.expand('/home/maxim/progs/odin/core')},
-            {name = "vendor", path = vim.fn.expand('/home/maxim/progs/odin/vendor')},
-            {name = "base", path = vim.fn.expand('/home/maxim/progs/odin/base')},
-        }
-    }
-})
+ lspconfig["ols"].setup({
+     cmd = {"/home/maxim/progs/odin/ols"},
+     on_attach = function()
+         ensure_ols_config()
+         -- vim.api.nvim_create_autocmd("CursorHoldI", {
+         --     buffer = buf,
+         --     callback = function()
+         --         vim.lsp.buf.signature_help()
+         --     end,
+         -- })
+     end,
+     init_options = {
+         collections = {
+             {name = "shared", path = vim.fn.expand('/home/maxim/progs/odin/shared')},
+             {name = "core", path = vim.fn.expand('/home/maxim/progs/odin/core')},
+             {name = "vendor", path = vim.fn.expand('/home/maxim/progs/odin/vendor')},
+             {name = "base", path = vim.fn.expand('/home/maxim/progs/odin/base')},
+         }
+     }
+ })
 
 lspconfig["clangd"].setup({
     cmd = {"clangd"},
