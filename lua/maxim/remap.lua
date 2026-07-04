@@ -19,3 +19,7 @@ map("n", "<leader>sh", ":split<CR>")
 map("n", "<A-k>", ":m -2<CR>")
 map("n", "<A-j>", ":m +1<CR>")
 map("v", "<leader>cy", "\"+yy")
+
+map("i", "<C-l>", "<C-c>lli")
+map("i", "<C-h>", "<C-c>i")
+
