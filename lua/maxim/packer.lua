@@ -46,4 +46,5 @@ return require('packer').startup(function(use)
   use "ray-x/lsp_signature.nvim"
   use "folke/flash.nvim"
   use "mg979/vim-visual-multi"
+  use "nvim-treesitter/nvim-treesitter"
 end)
