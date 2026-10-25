@@ -78,3 +78,24 @@ local cmp = require'cmp'
   vim.lsp.config("clangd", {
     capabilities = capabilities
   })
+
+  vim.lsp.config("ols", {
+    capabilities = capabilities
+  })
+
+  vim.lsp.config("c3_lsp", {
+    capabilities = capabilities
+  })
+
+  vim.lsp.config("zls", {
+    capabilities = capabilities
+  })
+  vim.lsp.config("hls", {
+    capabilities = capabilities
+  })
+  vim.lsp.config("nim_langserver", {
+    capabilities = capabilities
+  })
+  vim.lsp.config("ada_language_server", {
+    capabilities = capabilities
+  })

@@ -2,8 +2,39 @@ vim.lsp.config("zls", {})
 vim.lsp.config("clangd", {})
 vim.lsp.enable("clangd")
 
+vim.lsp.config("nim_langserver", {})
+vim.lsp.enable("nim_langserver")
+
+vim.lsp.config("c3_lsp", {
+  cmd = {'c3lsp', '-stdlib-path', '/home/mhrun/progs/c3/lib/std'},
+  filetypes = {"c3"},
+
+  init_options = {
+    ["stdlib-path"] = "/home/mhrun/progs/c3/lib/std"
+  }
+})
+vim.lsp.enable("c3_lsp")
+
+vim.lsp.config("ada_language_server", {})
+vim.lsp.enable("ada_language_server")
+
+vim.lsp.config("zls", {})
+vim.lsp.enable("zls")
+
+vim.lsp.config("hls", {})
+vim.lsp.enable("hls")
+
 vim.lsp.config("lua_ls", {})
 vim.lsp.enable("lua_ls")
+
+
+vim.filetype.add({extension = {goose = 'goose' }})
+vim.lsp.config('goose', {
+  cmd = {'goose', 'lsp'},
+  filetypes = {'goose'},
+  --root_markers = {'.git'}
+})
+vim.lsp.enable('goose')
 
 local function ensure_ols_config()
     local config_path = vim.fn.getcwd() .. "/ols.json"
@@ -24,7 +55,7 @@ local function ensure_ols_config()
 end
 
 vim.lsp.config("ols", {
-    cmd = {"/home/maxim/progs/odin/ols"},
+    cmd = {"/home/mhrun/progs/ols/ols"},
     on_attach = function()
         ensure_ols_config()
         -- vim.api.nvim_create_autocmd("CursorHoldI", {
@@ -36,10 +67,10 @@ vim.lsp.config("ols", {
     end,
     init_options = {
         collections = {
-            {name = "shared", path = vim.fn.expand('/home/maxim/progs/odin/shared')},
-            {name = "core", path = vim.fn.expand('/home/maxim/progs/odin/core')},
-            {name = "vendor", path = vim.fn.expand('/home/maxim/progs/odin/vendor')},
-            {name = "base", path = vim.fn.expand('/home/maxim/progs/odin/base')},
+            {name = "shared", path = vim.fn.expand('/home/mhrun/progs/odin/shared')},
+            {name = "core", path = vim.fn.expand('/home/mhrun/progs/odin/core')},
+            {name = "vendor", path = vim.fn.expand('/home/mhrun/progs/odin/vendor')},
+            {name = "base", path = vim.fn.expand('/home/mhrun/progs/odin/base')},
         }
     }
 })

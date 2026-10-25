@@ -2,9 +2,25 @@ require("maxim.config")
 require("maxim.remap")
 
 
---vim.cmd('colorscheme base16-gruvbox-dark-soft')
-vim.cmd.colorscheme("base16-aztec")
+vim.cmd('colorscheme base16-ashes')
+-- vim.cmd.colorscheme("base16-hardcore")
 
+
+-- this is for background transparency
+-- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+-- vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
+-- vim.api.nvim_set_hl(0, "LineNr", {bg = "none"})
+-- vim.api.nvim_set_hl(0, "SignColumn", {bg = "none"})
+-- vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = "none"})
+
+
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "c3",
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
 
 
 -- base16-0x96f

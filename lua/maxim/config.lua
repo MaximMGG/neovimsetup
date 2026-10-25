@@ -1,7 +1,7 @@
 local set = vim.opt
 set.encoding = 'utf-8'
 set.fileencoding = 'utf-8'
-set.textwidth=80
+set.textwidth=180
 set.expandtab = true
 set.shiftwidth=2
 set.softtabstop=2
